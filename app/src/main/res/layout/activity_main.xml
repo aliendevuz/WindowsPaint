@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_display"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <ImageView
+        android:id="@+id/main_background"
+        android:src="@drawable/wallpaper"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/window"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="PxUsage" >
+
+        <LinearLayout
+            android:id="@+id/surface_of_header"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="8dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_of_header"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/cascadia"
+                android:gravity="center_vertical"
+                android:text="Paint"
+                android:textColor="@color/white"
+                app:drawableStartCompat="@drawable/baseline_category_24"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:id="@+id/space_of_header"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/close_button_of_header"
+                android:layout_width="32dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="4dp"
+                android:background="#FF4060"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5.2dp"
+                    android:src="@drawable/baseline_close_24"
+                    android:contentDescription="TODO"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/surface_of_display"
+            android:layout_margin="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/background_page" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/shape_of_display"
+                android:layout_margin="1dp"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="6dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <uz.alien_dev.windowsonandroid.Display
+                    android:id="@+id/playground"
+                    android:background="@color/white"
+                    android:layout_width="640px"
+                    android:layout_height="480px" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
